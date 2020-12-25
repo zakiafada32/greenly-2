@@ -50,10 +50,10 @@ const getListSeatId = (data) => {
     const rowDecimal = convertToDecimal(rowBinary);
     const columnDecimal = convertToDecimal(columnBinary);
     const seatId = calculateSeatId(rowDecimal, columnDecimal);
-    if (seatId) return seatId;
+    return seatId;
   });
   // filter undefined data
-  const filterData = listSeatId.filter((a) => typeof a === 'number');
+  const filterData = listSeatId.filter((a) => typeof a === 'number' && a);
   // sort data
   const sortData = filterData.sort((a, b) => a - b);
   return sortData;
